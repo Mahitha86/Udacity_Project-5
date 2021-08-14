@@ -71,7 +71,7 @@ jobs:
             docker tag $TAG $dockerpath
             docker push $dockerpath
 
-  Build_and_Deploy_AWS_Kube:
+  Deploy_AWS_Kube:
     docker:
       - image: ubuntu:18.04
     working_directory: ~/repo
@@ -127,5 +127,5 @@ workflows:
        - lint_Dockerfile
        - Build_DockerApp:
             requires: [lint_Dockerfile]
-       - Build_and_Deploy_AWS_Kube:
+       - Deploy_AWS_Kube:
             requires: [Build_DockerApp]

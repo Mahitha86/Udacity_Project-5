@@ -4,6 +4,8 @@ Description:The  project deploys  index.html  using RollingUpdate
 *********************************************************************************************************************
 
 Technologies Used:
+===================
+
 Docker 
 
 Kubernetes
@@ -14,8 +16,10 @@ GitHub
 
 AWS
 
-*********************************************************************************************************************
+***********************************************************************************************************************
+
 Steps:
+========
 
 1)Test the  code using linting
 
@@ -33,7 +37,7 @@ Steps:
 
 8)Using RollingUpdate method  deployed  this  app  again 
 
-9)the entire  process  is run via CIRCLECI and  code is  stored in  github 
+9)the entire  process  is run via CIRCLECI and  code is  plulled from  github repo
 
 *********************************************************************************************************************
 
