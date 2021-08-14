@@ -1,0 +1,26 @@
+# Create web hosts based on docker image
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone-starkids
+spec:
+  selector:
+    matchLabels:
+      app: capstone-starkids
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: capstone-starkids
+    spec:
+      containers:
+      - name: capstone-starkids
+        image: mahitha86/udacity_capstone
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

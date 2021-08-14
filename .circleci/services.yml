@@ -1,0 +1,13 @@
+  
+# Create Load balancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: capstone-starkids
+spec:
+  selector:
+    app: capstone-starkids
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
