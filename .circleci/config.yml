@@ -6,60 +6,6 @@
 
 version: 2.1
 
-orbs:
-  slack: circleci/slack@4.4.2
-  jq: circleci/jq@2.2.0
-
-commands:
-  extract-commit-message:
-    description: Extract commit message
-    steps:
-      - run:
-          name: Extract commit message
-          when: always
-          command: |
-            echo "export COMMIT_MESSAGE=\"$(git log --format=%B -n 1 $CIRCLE_SHA1)\"" >> $BASH_ENV
-            source $BASH_ENV
-  slack-notification-fail:
-    description: Send notification to Slack
-    steps:
-      - extract-commit-message
-
-      - slack/notify:
-          channel: udapeople
-          event: fail
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                      "type": "mrkdwn",
-                      "text": "Your job *$CIRCLE_JOB* has *faild* :octagonal_sign: (<$CIRCLE_BUILD_URL|build #$CIRCLE_BUILD_NUM>)\n\nrepo: $CIRCLE_REPOSITORY_URL\n\nbranch: $CIRCLE_BRANCH\n\ncommitter: $CIRCLE_USERNAME\n\ncommit message: $COMMIT_MESSAGE"
-                  }
-                }
-              ]
-            }
-  slack-notification-pass:
-    description: Send notification to Slack
-    steps:
-      - extract-commit-message
-
-      - slack/notify:
-          channel: udapeople
-          event: pass
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                      "type": "mrkdwn",
-                      "text": "Your job *$CIRCLE_JOB* has *built* :white_check_mark: (<$CIRCLE_BUILD_URL|build #$CIRCLE_BUILD_NUM>)\n\nrepo: $CIRCLE_REPOSITORY_URL\n\nbranch: $CIRCLE_BRANCH\n\ncommitter: $CIRCLE_USERNAME\n\ncommit message: $COMMIT_MESSAGE"
-                  }
-                }
-              ]
-            } 
 jobs:
   lint_Dockerfile:
     docker:
@@ -75,8 +21,6 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            apk add --update curl #for slack notify
-            apk add --update jq #for slack notify
             python3 -m venv capstone
             . capstone/bin/activate
             make install
@@ -92,8 +36,7 @@ jobs:
           command: |
             . capstone/bin/activate
             make lint
-      - slack-notification-fail
-      - slack-notification-pass
+
 
   # Build Docker Application
   Build_DockerApp:
@@ -126,8 +69,7 @@ jobs:
             dockerpath=mahitha86/$TAG
             docker tag $TAG $dockerpath
             docker push $dockerpath
-      - slack-notification-fail
-      - slack-notification-pass
+
 
   Deploy_AWS_Kube:
     docker:
@@ -179,17 +121,12 @@ jobs:
              kubectl get services
              kubectl rollout restart deployment/capstone-starkids
              kubectl describe svc capstone-starkids
-      - slack-notification-fail
-      - slack-notification-pass
 
 workflows:
   default:
     jobs:
        - lint_Dockerfile
-          context: slack-secrets
        - Build_DockerApp:
-          context: slack-secrets
           requires: [lint_Dockerfile]
        - Deploy_AWS_Kube:
-          context: slack-secrets
           requires: [Build_DockerApp]
