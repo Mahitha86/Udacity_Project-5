@@ -33,7 +33,7 @@ Steps:
 
 6)Deploy container
 
-7)Update the  web page  (Changed the version, Colour and format )
+7)Update the  web page  (Changed the version, Colour, background and format )
 
 8)Using RollingUpdate method  deployed  this  app  again 
 
