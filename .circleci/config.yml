@@ -3,9 +3,12 @@
 #
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
+
 version: 2.1
+
 orbs:
-  slack: circleci/slack@4.2.0
+  slack: circleci/slack@4.4.2
+  
 jobs:
   lint_Dockerfile:
     docker:
