@@ -1,0 +1,185 @@
+h1 {
+  font-weight: 800;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+header.myheadsimple {
+  margin-bottom: 20px;
+  color: brown;
+  font-size: 25px;
+  font-style: Normal;
+  position: relative;
+  background-size: cover;
+}
+
+
+header.myheadsimple2 {
+  margin-bottom: 10px;
+  color: darkgreen;
+  font-size: 15px;
+  font-style: Normal;
+  position: relative;
+  background-size: cover;
+}
+
+header.myhead {
+  margin-bottom: 30px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  color: darkgreen;
+  font-size: 60px;
+  font-style: oblique;
+  background-attachment: scroll; 	
+  position: relative;
+  background-size: cover;
+}
+header.myhead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.0;
+}
+#design1 {
+  background: url(Background.jpg)right bottom no-repeat, url(Background2.jpg) left top repeat;
+  padding: 15px;
+  border: 10px solid transparent;
+  font-family: "Arial";
+}
+
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button1 {background-color: Brown;}
+.button2 {background-color: #008CBA;} 
+.button3 {background-color: #f44336;} 
+.button4 {background-color: Orange;}  
+.button5 {background-color: #555555;} 
+.button6 {background-color: Purple;} 
+.button7 {background-color: Darkblue;} 
+.button8 {background-color: Darkgreen;} 
+.button9 {background-color: Darkyellow;} 
+.button10 {background-color: lightblue;} 
+.button11 {
+  background-color: lightgrey;
+  color: black;
+  border: 2px solid green;
+}
+
+.button11:hover {
+	background-color: darkgreen;
+	color: white;}
+	
+.button1:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+.button2:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+.button3:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+	.button4:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+	.button5:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+	.button6:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+	.button7:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+	.button8:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+	.button9:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+	.button10:hover {
+	background-color: black;
+	color: darkred;
+    border: 2px solid red;
+}
+
+
+p.inset {border-style: inset;}
+input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}

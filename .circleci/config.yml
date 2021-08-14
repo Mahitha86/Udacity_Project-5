@@ -1,0 +1,43 @@
+  
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2.1
+orbs:
+  slack: circleci/slack@4.2.0
+jobs:
+  lint_Dockerfile:
+    docker:
+      # Use the same Docker base as the project
+      - image: python:3.7.3-stretch
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys: [Dockerfile-lint]
+            
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv capstone
+            . capstone/bin/activate
+            make install
+            # Install hadolint
+            wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
+            chmod +x /bin/hadolint
+      - save_cache:
+          paths:
+            - ./capstone
+          key: Dockerfile-lint
+      - run:
+          name: run lint
+          command: |
+            . capstone/bin/activate
+            make lint
+
+workflows:
+  default:
+    jobs:
+       - lint_Dockerfile
