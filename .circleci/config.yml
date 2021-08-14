@@ -186,10 +186,10 @@ workflows:
   default:
     jobs:
        - lint_Dockerfile
-            context: slack-secrets
+          context: slack-secrets
        - Build_DockerApp:
-            context: slack-secrets
-            requires: [lint_Dockerfile]
+          context: slack-secrets
+          requires: [lint_Dockerfile]
        - Deploy_AWS_Kube:
-            context: slack-secrets
-            requires: [Build_DockerApp]
+          context: slack-secrets
+          requires: [Build_DockerApp]
