@@ -36,7 +36,37 @@ jobs:
           command: |
             . capstone/bin/activate
             make lint
+  # Build Docker Application
+  Build_DockerApp:
+    docker:
+      # Use the same Docker base as the project
+      - image: circleci/golang:1.15
+        auth:
+             username: $DOCKER_USER
+             password: $DOCKER_PASS
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 19.03.13
 
+      # build and push Docker image
+      - run:
+          name: Build Docker Image
+          command: |
+            TAG=udacity_capstone
+            docker build -t $TAG .
+      - run:
+          name: List Docker Image
+          command: |
+            docker image ls
+      - run:
+          name: Push Docker image into Docker Hub
+          command: |
+            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+            TAG=udacity_capstone
+            dockerpath=mahitha86/$TAG
+            docker tag $TAG $dockerpath
+            docker push $dockerpath
 workflows:
   default:
     jobs:
