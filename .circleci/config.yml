@@ -71,3 +71,5 @@ workflows:
   default:
     jobs:
        - lint_Dockerfile
+       - Build_DockerApp:
+            requires: [lint_Dockerfile]
