@@ -71,6 +71,7 @@ jobs:
   Build_and_Deploy_AWS_Kube:
     docker:
       - image: ubuntu:18.04
+    working_directory: ~/repo
     steps:
       - checkout
       - run:
