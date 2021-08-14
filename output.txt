@@ -1,0 +1,49 @@
+{
+    "Exports": [
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::ARN",
+            "Value": "arn:aws:eks:us-west-2:594156123197:cluster/capstone-starkids"
+        },
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::ClusterSecurityGroupId",
+            "Value": "sg-068922a6b9dd6eaaf"
+        },
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::Endpoint",
+            "Value": "https://0CD7185DD6BB35937710B9A68BDFE479.gr7.us-west-2.eks.amazonaws.com"
+        },
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::SecurityGroup",
+            "Value": "sg-0fec72f4285430e67"
+        },
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::ServiceRoleARN",
+            "Value": "arn:aws:iam::594156123197:role/eksctl-capstone-starkids-cluster-ServiceRole-N38VQBFDB2VW"
+        },
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::SharedNodeSecurityGroup",
+            "Value": "sg-0121b2213a3e54ff2"
+        },
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::SubnetsPrivate",
+            "Value": "subnet-08b673c1cffeb934d,subnet-0192ad977b605f4c9,subnet-077dea6d329d9dfd7"
+        },
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::SubnetsPublic",
+            "Value": "subnet-0cdc9997de933b126,subnet-0738f29381d2bdfb7,subnet-0ae9be3f6581715ec"
+        },
+        {
+            "ExportingStackId": "arn:aws:cloudformation:us-west-2:594156123197:stack/eksctl-capstone-starkids-cluster/5b151260-fd0a-11eb-9aeb-06c611e8502b",
+            "Name": "eksctl-capstone-starkids-cluster::VPC",
+            "Value": "vpc-0cc0954eaac2f8ff9"
+        }
+    ]
+}
